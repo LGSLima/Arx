@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+li span {
+    position: relative;
+    padding: 12px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.text-white span {
+    color: #A259FF;
+}
+
+li span::before {
+    inset: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.25s ease;
+}
+
+.btn {
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-login {
+    background-color: #A259FF;
+    box-shadow: 0 4px 10px rgba(162, 89, 255, 0.2);
+}
+
+.btn-login:hover {
+    background-color: #8c3dff;
+}
+
+.form-control:focus {
+    border-color: #A259FF !important;
+    box-shadow: 0 0 18px #A259FF !important;
+}
+
+.link-cad-reg {
+    color: #8c3dff;
+    font-weight: bold;
+    text-shadow: black 0 0 2px;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline !important;
+}
+
+li span:hover::before {
+    opacity: 1;
+}
+
+li span::before, .navi-border::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.active span {
+    font-weight: bold;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}
+
+.navi-border {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+  
+.navi-border::after {
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #FF4FD8, #A259FF, #4FC3FF, #4FFFD2);
+}

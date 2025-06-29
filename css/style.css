@@ -16,12 +16,12 @@ body {
     flex-grow: 1;
     overflow-x: hidden;
     background-color: #121212;
-    color: #fff;
+    color: #ffffff;
 }
 
 /* Texto e utilitários */
 .text-white span {
-    color: #A259FF;
+    color: #c084fc; /* Roxo mais claro e legível */
 }
 
 .active span {
@@ -43,12 +43,13 @@ li span::before {
     opacity: 0;
     z-index: -1;
     transition: opacity 0.25s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 li span:hover::before {
     opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .navi-border {
@@ -65,22 +66,27 @@ li span:hover::before {
     height: 4px;
     width: 100%;
     border-radius: 2px;
-    background: linear-gradient(135deg, #FF4FD8, #A259FF, #4FC3FF, #4FFFD2);
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #f472b6, #c084fc, #60a5fa, #34d399); /* Cores acessíveis */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 /* Botões */
 .btn {
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     border-radius: 0;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+.btn:focus-visible,
+a:focus-visible {
+    outline: 2px solid #9333ea;
+    outline-offset: 3px;
+}
+
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .login-button:hover {
@@ -89,9 +95,8 @@ li span:hover::before {
 
 .btn-register,
 .btn-login {
-    background: linear-gradient(135deg, #A259FF, #8c3dff);
-    color: white;
-    font-weight: bold;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9); /* Roxo mais escuro */
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     width: 100%;
@@ -101,9 +106,9 @@ li span:hover::before {
 
 .btn-register:hover,
 .btn-login:hover {
-    background: linear-gradient(135deg, #8c3dff, #6a1eff);
+    background: linear-gradient(135deg, #6d28d9, #5b21b6);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
 }
 
 /* Campos de formulário */
@@ -111,22 +116,22 @@ li span:hover::before {
     border-radius: 0;
     background-color: #1e1e1e !important;
     color: #fff !important;
-    border: 1px solid #444;
+    border: 1px solid #555;
 }
 
 .form-control:focus {
-    border-color: #A259FF !important;
-    box-shadow: 0 0 18px rgba(162, 89, 255, 0.4) !important;
+    border-color: #9333ea !important;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.5) !important;
 }
 
 .form-label {
-    color: #ddd;
+    color: #e5e5e5;
     font-weight: 500;
 }
 
 /* Links */
 .link-cad-reg {
-    color: #8c3dff;
+    color: #d8b4fe;
     text-decoration: underline;
     font-weight: bold;
     text-shadow: black 0 0 2px;
@@ -135,12 +140,12 @@ li span:hover::before {
 
 .link-cad-reg:hover,
 .link-pass:hover {
-    color: #FF4FD8;
+    color: #f472b6;
     text-decoration: underline;
 }
 
 .link-pass {
-    color: white;
+    color: #e0e0e0;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
@@ -148,18 +153,18 @@ li span:hover::before {
 .login-link {
     text-align: center;
     margin-top: 1.5rem;
-    color: #aaa;
+    color: #cccccc;
 }
 
 .login-link a {
-    color: #A259FF;
+    color: #c084fc;
     text-decoration: none;
     font-weight: bold;
 }
 
 .login-link a:hover {
     text-decoration: underline;
-    color: #8c3dff;
+    color: #f472b6;
 }
 
 /* Formulário */
@@ -172,34 +177,21 @@ li span:hover::before {
     box-shadow: 0 0 30px rgba(162, 89, 255, 0.2);
 }
 
-.signup-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 .signup-header h2 {
-    color: #A259FF;
+    color: #c084fc;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(162, 89, 255, 0.3);
-    margin-bottom: 1rem;
-}
-
-.form-section {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #333;
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
 }
 
 .form-section-title {
-    color: #A259FF;
-    margin-bottom: 1rem;
-    font-weight: bold;
+    color: #c084fc;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .required:after {
     content: " *";
-    color: #ff4d4d;
+    color: #f87171;
 }
 
 .form-check-input {
@@ -208,73 +200,75 @@ li span:hover::before {
 }
 
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.2rem rgba(162, 89, 255, 0.25) !important;
-    border-color: #A259FF;
+    box-shadow: 0 0 0 0.2rem rgba(192, 132, 252, 0.25) !important;
+    border-color: #c084fc;
 }
 
 .form-check-input:checked {
-    background-color: #A259FF !important;
-    border-color: #A259FF !important;
+    background-color: #6d28d9 !important;
+    border-color: #c084fc !important;
 }
 
-/* Extras e componentes */
+/* Extras */
 .modal-content {
-    border-color: #A259FF;
+    border-color: #c084fc;
     border-radius: 0;
 }
 
 .form-note {
     font-size: 0.85rem;
-    color: #999;
+    color: #aaaaaa;
     margin-top: 0.25rem;
 }
 
 /* Decoração SVG */
+/* Decoração SVG */
 .svg-decor {
     position: fixed;
-    z-index: 1;
-    height: 100%;
     top: 0;
+    height: 100%;
+    width: 350px;
     pointer-events: none;
+    z-index: 0;
     opacity: 0.4;
 }
 
 .decor-left {
-    left: -150px;
+    left: 0;
 }
 
 .decor-right {
-    right: -150px;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 0.5; }
-    100% { opacity: 0.3; }
-}
-
-@keyframes glow {
-    0% { filter: blur(30px); }
-    50% { filter: blur(40px); }
-    100% { filter: blur(30px); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+    right: 0;
 }
 
 .pulse {
-    animation: pulse 8s infinite ease-in-out;
+    animation: pulse 6s infinite ease-in-out;
+}
+
+.float {
+    animation: float 10s infinite ease-in-out;
 }
 
 .glow {
     animation: glow 12s infinite ease-in-out;
 }
 
-.float {
-    animation: float 15s infinite ease-in-out;
+@keyframes pulse {
+    0%   { opacity: 0.2; transform: scale(1); }
+    50%  { opacity: 0.35; transform: scale(1.02); }
+    100% { opacity: 0.2; transform: scale(1); }
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes glow {
+    0%   { filter: drop-shadow(0 0 10px rgba(162, 89, 255, 0.1)); }
+    50%  { filter: drop-shadow(0 0 20px rgba(162, 89, 255, 0.3)); }
+    100% { filter: drop-shadow(0 0 10px rgba(162, 89, 255, 0.1)); }
 }
 
 @media (max-width: 1200px) {
@@ -282,26 +276,24 @@ li span:hover::before {
         opacity: 0.3;
     }
 
-    .decor-left {
-        left: -200px;
-    }
-
-    .decor-right {
-        right: -200px;
-    }
+    .decor-left { left: -200px; }
+    .decor-right { right: -200px; }
 }
 
 @media (max-width: 992px) {
-    .svg-decor {
-        display: none;
-    }
+    .svg-decor { display: none; }
 }
 
-/* Estilo para inputs de data */
+.svg-decor svg {
+    filter: blur(25px);
+    transform: scale(1.1);
+}
+
+/* Inputs de data */
 input[type="date"] {
     background-color: #121212;
     color: #fff;
-    border: 1px solid #444;
+    border: 1px solid #555;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

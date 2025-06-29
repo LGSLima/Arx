@@ -41,7 +41,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-light" id="login-button" data-bs-toggle="modal" data-bs-target="#loginmodal" role="button">
-                                <span class="ms-1">
+                                <span>
                                     <i class="bi bi-box-arrow-in-right"></i>
                                     Entrar
                                 </span>
@@ -61,7 +61,7 @@
                         <p>Preencha os campos abaixo para criar sua conta no Arx</p>
                     </div>
                     
-                    <form action="user_cad.php" method="POST">
+                    <form action="user_cad.php" method="POST" enctype="multipart/form-data">
                         <!-- Seção de Informações Obrigatórias -->
                         <div class="form-section">
                             <h4 class="form-section-title">Informações de Acesso</h4>
@@ -138,66 +138,40 @@
         </main>
 
         <!-- Decoração SVG -->
+        <!-- Decoração SVG -->
         <div class="svg-decor decor-left">
-            <svg width="350" height="100%" viewBox="0 0 350 1000" xmlns="http://www.w3.org/2000/svg">
+            <svg width="500" height="100%" viewBox="0 0 500 1000" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <radialGradient id="glow-left1" cx="30%" cy="30%" r="70%">
-                        <stop offset="0%" stop-color="#FF4FD8" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#FF4FD8" stop-opacity="0" />
+                    <radialGradient id="left-light1" cx="30%" cy="20%" r="80%">
+                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.35"/>
+                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="glow-left2" cx="40%" cy="60%" r="70%">
-                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0" />
-                    </radialGradient>
-                    <radialGradient id="glow-left3" cx="20%" cy="80%" r="70%">
-                        <stop offset="0%" stop-color="#4FC3FF" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#4FC3FF" stop-opacity="0" />
+                    <radialGradient id="left-light2" cx="40%" cy="70%" r="90%">
+                        <stop offset="0%" stop-color="#4FC3FF" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#4FC3FF" stop-opacity="0"/>
                     </radialGradient>
                 </defs>
-                
-                <!-- Luzes pulsantes -->
-                <ellipse class="pulse" cx="50" cy="200" rx="180" ry="100" fill="url(#glow-left1)" />
-                <ellipse class="pulse" cx="150" cy="500" rx="220" ry="150" fill="url(#glow-left2)" />
-                <ellipse class="pulse" cx="80" cy="800" rx="180" ry="100" fill="url(#glow-left3)" />
-                
-                <!-- Raios de luz flutuantes -->
-                <path class="float" d="M0,150 C100,50 150,250 50,400" fill="none" stroke="#A259FF" stroke-opacity="0.05" stroke-width="80" />
-                <path class="float" d="M50,600 C150,500 100,750 0,900" fill="none" stroke="#4FC3FF" stroke-opacity="0.05" stroke-width="60" />
-                
-                <!-- Brilho central -->
-                <circle class="glow" cx="100" cy="500" r="250" fill="#A259FF" fill-opacity="0.05" />
+
+                <ellipse class="pulse" cx="150" cy="250" rx="320" ry="190" fill="url(#left-light1)" />
+                <ellipse class="pulse" cx="100" cy="750" rx="350" ry="240" fill="url(#left-light2)" />
             </svg>
         </div>
 
-        <!-- Luzes de fundo animadas - Lado Direito -->
         <div class="svg-decor decor-right">
-            <svg width="350" height="100%" viewBox="0 0 350 1000" xmlns="http://www.w3.org/2000/svg">
+            <svg width="500" height="100%" viewBox="0 0 500 1000" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <radialGradient id="glow-right1" cx="70%" cy="30%" r="70%">
-                        <stop offset="0%" stop-color="#4FC3FF" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#4FC3FF" stop-opacity="0" />
+                    <radialGradient id="right-light1" cx="70%" cy="30%" r="80%">
+                        <stop offset="0%" stop-color="#4FFFD2" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#4FFFD2" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="glow-right2" cx="60%" cy="60%" r="70%">
-                        <stop offset="0%" stop-color="#4FFFD2" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#4FFFD2" stop-opacity="0" />
-                    </radialGradient>
-                    <radialGradient id="glow-right3" cx="80%" cy="80%" r="70%">
-                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.15" />
-                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0" />
+                    <radialGradient id="right-light2" cx="60%" cy="80%" r="90%">
+                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.35"/>
+                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0"/>
                     </radialGradient>
                 </defs>
-                
-                <!-- Luzes pulsantes -->
-                <ellipse class="pulse" cx="300" cy="150" rx="180" ry="100" fill="url(#glow-right1)" />
-                <ellipse class="pulse" cx="200" cy="550" rx="220" ry="150" fill="url(#glow-right2)" />
-                <ellipse class="pulse" cx="270" cy="850" rx="180" ry="100" fill="url(#glow-right3)" />
-                
-                <!-- Raios de luz flutuantes -->
-                <path class="float" d="M350,200 C250,100 200,300 300,450" fill="none" stroke="#4FFFD2" stroke-opacity="0.05" stroke-width="80" />
-                <path class="float" d="M300,650 C200,550 250,800 350,950" fill="none" stroke="#A259FF" stroke-opacity="0.05" stroke-width="60" />
-                
-                <!-- Brilho central -->
-                <circle class="glow" cx="250" cy="500" r="250" fill="#4FC3FF" fill-opacity="0.05" />
+
+                <ellipse class="pulse" cx="350" cy="300" rx="320" ry="190" fill="url(#right-light1)" />
+                <ellipse class="pulse" cx="400" cy="800" rx="350" ry="240" fill="url(#right-light2)" />
             </svg>
         </div>
 
@@ -215,14 +189,14 @@
                                 <hr>
                             </div> 
                             <div class="container">
-                                <form action="php/verify.php" method="POST">
+                                <form action="verify.php" method="POST">
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="user_nickname" id="user_nickname" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
-                                        <label for="user_nickname" class="text-light">Nome de Usuário</label>
+                                        <input type="text" name="user_nickname" id="login_nickname" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
+                                        <label for="login_nickname" class="text-light">Nome de Usuário</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" name="user_password" id="user_password" class="form-control bg-dark text-light" placeholder="Senha" required>
-                                        <label for="user_password" class="text-light">Senha</label>
+                                        <input type="password" name="user_password" id="login_password" class="form-control bg-dark text-light" placeholder="Senha" required>
+                                        <label for="login_password" class="text-light">Senha</label>
                                     </div>
                                     <div>
                                         <button type="submit" class="btn btn-login w-100 mb-2">Entrar</button>

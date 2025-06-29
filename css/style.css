@@ -1,3 +1,4 @@
+/* Reset e base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,8 +14,21 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    overflow-x: hidden;
+    background-color: #121212;
+    color: #fff;
 }
 
+/* Texto e utilitários */
+.text-white span {
+    color: #A259FF;
+}
+
+.active span {
+    font-weight: bold;
+}
+
+/* Lista e navegação */
 li span {
     position: relative;
     padding: 12px;
@@ -22,17 +36,41 @@ li span {
     overflow: hidden;
 }
 
-.text-white span {
-    color: #A259FF;
-}
-
 li span::before {
+    content: "";
+    position: absolute;
     inset: 0;
     opacity: 0;
     z-index: -1;
     transition: opacity 0.25s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+li span:hover::before {
+    opacity: 1;
+}
+
+.navi-border {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.navi-border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #FF4FD8, #A259FF, #4FC3FF, #4FFFD2);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Botões */
 .btn {
     color: white;
     font-weight: bold;
@@ -45,64 +83,228 @@ li span::before {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-login {
-    background-color: #A259FF;
-    box-shadow: 0 4px 10px rgba(162, 89, 255, 0.2);
-}
-
-.btn-login:hover {
-    background-color: #8c3dff;
-}
-
-.form-control:focus {
-    border-color: #A259FF !important;
-    box-shadow: 0 0 18px #A259FF !important;
-}
-
-.link-cad-reg {
-    color: #8c3dff;
-    font-weight: bold;
-    text-shadow: black 0 0 2px;
-}
-
-.form-control {
-    border-radius: 0;
-}
-
-.text-decoration-none:hover {
-    text-decoration: underline !important;
-}
-
-li span:hover::before {
-    opacity: 1;
-}
-
-li span::before, .navi-border::after {
-    content: "";
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.active span {
-    font-weight: bold;
-}
-
 .login-button:hover {
     cursor: pointer;
 }
 
-.navi-border {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 4px;
-}
-  
-.navi-border::after {
-    left: 0;
-    bottom: 0;
-    height: 4px;
+.btn-register,
+.btn-login {
+    background: linear-gradient(135deg, #A259FF, #8c3dff);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
     width: 100%;
-    border-radius: 2px;
-    background: linear-gradient(135deg, #FF4FD8, #A259FF, #4FC3FF, #4FFFD2);
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+    background: linear-gradient(135deg, #8c3dff, #6a1eff);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Campos de formulário */
+.form-control {
+    border-radius: 0;
+    background-color: #1e1e1e !important;
+    color: #fff !important;
+    border: 1px solid #444;
+}
+
+.form-control:focus {
+    border-color: #A259FF !important;
+    box-shadow: 0 0 18px rgba(162, 89, 255, 0.4) !important;
+}
+
+.form-label {
+    color: #ddd;
+    font-weight: 500;
+}
+
+/* Links */
+.link-cad-reg {
+    color: #8c3dff;
+    text-decoration: underline;
+    font-weight: bold;
+    text-shadow: black 0 0 2px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link-cad-reg:hover,
+.link-pass:hover {
+    color: #FF4FD8;
+    text-decoration: underline;
+}
+
+.link-pass {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #aaa;
+}
+
+.login-link a {
+    color: #A259FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #8c3dff;
+}
+
+/* Formulário */
+.signup-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    box-shadow: 0 0 30px rgba(162, 89, 255, 0.2);
+}
+
+.signup-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signup-header h2 {
+    color: #A259FF;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(162, 89, 255, 0.3);
+    margin-bottom: 1rem;
+}
+
+.form-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.form-section-title {
+    color: #A259FF;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.required:after {
+    content: " *";
+    color: #ff4d4d;
+}
+
+.form-check-input {
+    background-color: #121212;
+    border-radius: 0 !important;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(162, 89, 255, 0.25) !important;
+    border-color: #A259FF;
+}
+
+.form-check-input:checked {
+    background-color: #A259FF !important;
+    border-color: #A259FF !important;
+}
+
+/* Extras e componentes */
+.modal-content {
+    border-color: #A259FF;
+    border-radius: 0;
+}
+
+.form-note {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+/* Decoração SVG */
+.svg-decor {
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.decor-left {
+    left: -150px;
+}
+
+.decor-right {
+    right: -150px;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes glow {
+    0% { filter: blur(30px); }
+    50% { filter: blur(40px); }
+    100% { filter: blur(30px); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.pulse {
+    animation: pulse 8s infinite ease-in-out;
+}
+
+.glow {
+    animation: glow 12s infinite ease-in-out;
+}
+
+.float {
+    animation: float 15s infinite ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    .svg-decor {
+        opacity: 0.3;
+    }
+
+    .decor-left {
+        left: -200px;
+    }
+
+    .decor-right {
+        right: -200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .svg-decor {
+        display: none;
+    }
+}
+
+/* Estilo para inputs de data */
+input[type="date"] {
+    background-color: #121212;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
 }

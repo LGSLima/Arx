@@ -1,12 +1,21 @@
 <?php
     include("connection_db.php");
 
-    $nick_user = $_POST['nick_user'];
-    $email_user = $_POST['email_user'];
-    $password_user = password_hash($_POST['password_user'], PASSWORD_DEFAULT);
-    $birthday_date_user = $_POST['birthday_date_user'];
+    if ($_POST['user_password'] !== $_POST['confirm_password']) {
+        echo "As senhas não coincidem.";
+        exit;
+    }
 
-    $sql = "INSERT INTO Cad_User (Nick_User, Email_user, Password_User, Birthday_Date_User) VALUES ('$nick_user', '$email_user', '$password_user', '$birthday_date_user')";
+    $user_nickname = $_POST['user_nickname'];
+    $user_email = $_POST['user_email'];
+    $user_password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
+    $birthday_date = $_POST['birthday_date'];
+    $user_name = $_POST['user_name'];
+    $user_tel = $_POST['user_tel'];
+    $user_img = $_POST['user_img'];
+
+    $sql = "INSERT INTO users (user_nickname, user_email, user_password, birthday_date, user_name, user_tel, user_img)
+    VALUES ('$user_nickname', '$user_email', '$user_password', '$birthday_date', '$user_name', '$user_tel', '$user_img')";
 
     if (mysqli_query($connection, $sql)) {
         echo "Usuário cadastrado com sucesso.";

@@ -22,10 +22,10 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="bg-dark text-light">
-        <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border">
+        <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border py-3">
             <div class="container">
                 <a class="navbar-brand link-light d-flex align-items-center gap-2" href="#">
-                    <img src="image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid mb-lg-2" style="max-width: 60px;">
+                    <img src="image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
                     <h1 class="fw-bold">Arx</h1>
                 </a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,12 +68,12 @@
                             <div class="container">
                                 <form action="php/verify.php" method="POST">
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="nick_user" id="nick_user" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
-                                        <label for="nick_user" class="text-light">Nome de Usuário</label>
+                                        <input type="text" name="user_nickname" id="user_nickname" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
+                                        <label for="user_nickname" class="text-light">Nome de Usuário</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" name="password_user" id="password_user" class="form-control bg-dark text-light" placeholder="Senha" required>
-                                        <label for="password_user" class="text-light">Senha</label>
+                                        <input type="password" name="user_password" id="user_password" class="form-control bg-dark text-light" placeholder="Senha" required>
+                                        <label for="user_password" class="text-light">Senha</label>
                                     </div>
                                     <div>
                                         <button type="submit" class="btn btn-login w-100 mb-2">Entrar</button>
@@ -85,20 +85,16 @@
                                 <hr class="mb-0">
                             </div>
                             <div class="container d-flex justify-content-between small mb-2">
-                                <a href="#" class="text-decoration-none link-light">Esqueci minha senha</a>
+                                <a href="#" class="link-pass">Esqueci minha senha</a>
                                 <span>
                                     Não tem conta? 
-                                    <a href="signup.html" class="text-decoration-none link-light">
+                                    <a href="php/signup.php">
                                         <span class="link-cad-reg">Cadastre-se</span>
                                     </a>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div> -->
                 </div>
             </div>
         </div>

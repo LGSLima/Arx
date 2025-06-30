@@ -19,9 +19,20 @@ body {
     color: #ffffff;
 }
 
+.footer {
+    background-color: #0d0d0d;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+}
+
+.developer-section {
+    background: linear-gradient(50deg, #f472b6, #c084fc)
+}
+
 /* Texto e utilitários */
 .text-white span {
-    color: #c084fc; /* Roxo mais claro e legível */
+    color: #c084fc;
 }
 
 .active span {
@@ -36,7 +47,7 @@ li span {
     overflow: hidden;
 }
 
-li span::before {
+li span::before, .dropdown::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -47,7 +58,7 @@ li span::before {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
-li span:hover::before {
+li span:hover::before, .dropdown:hover::before {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -66,8 +77,119 @@ li span:hover::before {
     height: 4px;
     width: 100%;
     border-radius: 2px;
-    background: linear-gradient(135deg, #f472b6, #c084fc, #60a5fa, #34d399); /* Cores acessíveis */
+    background: linear-gradient(135deg, #f472b6, #c084fc);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Imagens */
+.presentation {
+    filter: 
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 3px #c084fc)
+        drop-shadow(0 0 6px #f472b6)
+        drop-shadow( 20px 60px 50px rgba(0, 0, 0, 0.5));
+    max-width: 600px;
+}
+
+/* Apresentação */
+.icon-presentation {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-back-color {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter:
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 3px #c084fc)
+        drop-shadow(0 0 6px #f472b6);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #c084fc;
+    margin-bottom: 1rem;
+}
+
+.card {
+    border-radius: 0;
+    border: 1px solid #c084fc;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #f472b6, #c084fc);
+}
+
+.icon-back-color:hover {
+    transform: scale(1.05);
+    filter:
+        drop-shadow(0 0 2px #fff)
+        drop-shadow(0 0 4px #c084fc)
+        drop-shadow(0 0 8px #f472b6);
+}
+
+.icon-presentation i {
+    font-size: 2rem;
+}
+
+.accordion-item {
+    border: 1px solid #c084fc;
+}
+
+.accordion {
+    border: 1px solid #c084fc;
+}
+
+.accordion-header button, 
+.accordion-body {
+    background-color: #1e1e1e !important;
+    color: #ffffff;
+}
+
+.accordion-header button:focus, 
+.accordion-header button:not(.collapsed) {
+    color: #c084fc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown */
+.dropdown-menu a:hover {
+    background-color: #555;
 }
 
 /* Botões */
@@ -95,7 +217,7 @@ a:focus-visible {
 
 .btn-register,
 .btn-login {
-    background: linear-gradient(135deg, #7c3aed, #6d28d9); /* Roxo mais escuro */
+    background: linear-gradient(50deg, #f472b6, #c084fc); /* Roxo mais escuro */
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -104,9 +226,15 @@ a:focus-visible {
     transition: all 0.3s ease;
 }
 
+.btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    margin-top: 1rem;
+}
+
 .btn-register:hover,
 .btn-login:hover {
-    background: linear-gradient(135deg, #6d28d9, #5b21b6);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
 }
@@ -222,7 +350,6 @@ a:focus-visible {
 }
 
 /* Decoração SVG */
-/* Decoração SVG */
 .svg-decor {
     position: fixed;
     top: 0;
@@ -299,4 +426,23 @@ input[type="date"] {
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #FF4FD8, #A259FF);
+  border-radius: 5px;
+}
+
+/* Ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff31d2, #892fff);
 }

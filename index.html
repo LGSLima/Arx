@@ -21,7 +21,7 @@
         <!-- CSS Personalizado -->
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="bg-dark text-light">
+    <body class="bg-dark text-light d-flex flex-column justify-content-center">
         <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border py-3">
             <div class="container">
                 <a class="navbar-brand link-light d-flex align-items-center gap-2" href="#">
@@ -52,6 +52,247 @@
             </div>
         </nav>
 
+        <main class="flex-grow-1 container">
+            <article class="py-4 row justify-content-center align-items-center">
+                <section class="col-lg-7 col-12 py-5">
+                    <div class="my-2">
+                        <div class="mb-2">
+                            <h1>Conheça o Arx!</h1>
+                            <p class="lead">O seu gerenciador de favoritos e senhas.</p>
+                            <p>
+                                Proteja seu dados sensíveis e seus recursos online <br>
+                                com nossa plataforma de segurança premiun.
+                            </p>
+                        </div>
+                        <div class="d-flex flex-column gap-4 mt-4 mb-2">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="icon-presentation icon-back-color">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold">Segurança Imbatível</h4>
+                                    <p class="mb-0">Criptografia de nível bancário para todas as suas senhas e dados sensíveis.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="icon-presentation icon-back-color">
+                                    <i class="bi bi-bookmark-star"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold">Favoritos Organizados</h4>
+                                    <p class="mb-0">Acesse rapidamente seus sites favoritos de qualquer dispositivo, em qualquer lugar.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="icon-presentation icon-back-color">
+                                    <i class="bi bi-speedometer2"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold">Acesso Rápido</h4>
+                                    <p class="mb-0">Preenchimento automático de formulários e logins com um único clique.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="icon-presentation icon-back-color">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold">Sincronização Total</h4>
+                                    <p class="mb-0">Seus dados sincronizados perfeitamente entre todos os seus dispositivos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mb-2">
+                            <button class="btn btn-register w-100">Cadastro</button>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-2">
+                            <button class="btn btn-secondary w-100"><i class="bi bi-info-circle"></i> Informações</i></button>
+                        </div>
+                    </div>                    
+                </section>
+
+                <section class="col-lg-5 col-12">
+                    <img src="/Github/Arx/image/presentation.png" alt="" class="img-fluid presentation" style="max-width: 500px; ">
+                </section>
+            </article>
+            
+            <!-- Recursos -->
+            <article>
+                <section class="container py-5">
+                    <h2 class="section-title">Recursos Premium</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center feature-icon mb-3">
+                                        <i class="bi bi-fingerprint "></i>
+                                    </div>
+                                    <h5 class="card-title">Autenticação Biométrica</h5>
+                                    <p class="card-text">Acesse suas informações com segurança usando sua impressão digital ou reconhecimento facial.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-key feature-icon"></i>
+                                    </div>
+                                    <h5 class="card-title">Gerador de Senhas</h5>
+                                    <p class="card-text">Crie senhas fortes e únicas com nosso gerador integrado e nunca mais se preocupe com segurança.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <i class="bi bi-bell feature-icon"></i>
+                                    </div>
+                                    <h5 class="card-title">Monitoramento de Vazamentos</h5>
+                                    <p class="card-text">Receba alertas instantâneos se suas informações aparecerem em qualquer violação de dados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <!-- FAQ Section -->
+        <aside>
+            <section class="container py-5">
+                <h2 class="section-title">Perquntas Frequentes</h2>
+                <div class="accordion accordion-flush">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Como o Arx protege minhas senhas?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Utilizamos criptografia de ponta a ponta com padrão AES-256, 
+                                o mesmo usado por bancos e instituições financeiras. Suas senhas são criptografadas 
+                                antes de saírem do seu dispositivo e só podem ser descriptografadas com sua chave mestra, 
+                                que nunca é armazenada em nossos servidores.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Posso acessar meus favoritos em vários dispositivos?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Sim! O Arx sincroniza automaticamente seus favoritos e senhas entre todos os 
+                                seus dispositivos. Basta instalar o aplicativo ou acessar pela web em qualquer dispositivo e 
+                                fazer login com sua conta.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                O que acontece se eu esquecer minha senha mestra?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Infelizmente, sem sua senha mestra, não podemos recuperar seus dados devido 
+                                à nossa política de segurança de conhecimento zero. Recomendamos que você guarde sua senha 
+                                mestra em um local seguro e ative a recuperação por email durante o cadastro.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                Como funciona o preenchimento automático?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Nossa extensão de navegador detecta automaticamente campos de login e senha. 
+                                Ao clicar no campo, você verá um ícone do Arx que permite selecionar a credencial 
+                                salva para preencher automaticamente. Tudo acontece localmente 
+                                em seu dispositivo para máxima segurança.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-4">Arx</h5>
+                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Produto</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#favoritos" class="text-light text-decoration-none">Favoritos</a></li>
+                            <li class="mb-2"><a href="#senhas" class="text-light text-decoration-none">Senhas</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Extensões</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Recursos</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Tutoriais</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Suporte</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="mb-4">Assine nossa newsletter</h5>
+                        <p>Receba as últimas novidades sobre segurança digital e atualizações do Arx.</p>
+                        <div class="input-group mb-3">
+                            <label for="email-contato" class="input-group-text fw-bold rounded-0">E-mail</label>
+                            <input type="email" id="email-contato" class="form-control text-light">
+                            <button class="btn btn-login" type="button">Assinar</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-4" style="border-color: #333;">
+                <div class="d-flex justify-content-center align-items-end">
+                    <div class="text-center text-md-end">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Termos de Uso</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Política de Privacidade</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="w-100 developer-section mb-0 py-3 text-center text-dark">
+                <span class="fw-bold">
+                    &copy; 2025 Luís Lima <a href="https://github.com/LGSLima" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lgslima" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    & 
+                    Lucas Goebel <a href="https://github.com/lgoebel" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lucas-a-goebel" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    <br>
+                    Todos os direitos reservados.</span>
+        </div>
+
         <!-- Modal de Login -->
         <div class="modal fade" tabindex="-1" id="loginmodal" aria-labelledby="loginmodalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -76,7 +317,7 @@
                                         <label for="user_password" class="text-light">Senha</label>
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn btn-login w-100 mb-2">Entrar</button>
+                                        <button type="submit" class="btn btn-login w-100">Entrar</button>
                                         <button type="button" class="btn btn-secondary w-100 fw-bold" data-bs-dismiss="modal">Cancelar</button>
                                     </div>
                                 </form>                                
@@ -98,10 +339,6 @@
                 </div>
             </div>
         </div>
-
-        <main>
-
-        </main>
 
         <!-- Decoração SVG -->
         <div class="svg-decor decor-left">
@@ -151,4 +388,3 @@
         </script>
     </body>
 </html>
-

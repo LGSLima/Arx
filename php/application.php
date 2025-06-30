@@ -30,7 +30,7 @@
         <!-- CSS Personalizado -->
         <link rel="stylesheet" href="/Github/Arx/css/style.css">
     </head>
-    <body class="bg-dark text-light">
+    <body class="d-flex flex-column justify-content-center bg-dark text-light">
         <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border py-3">
             <div class="container">
                 <a class="navbar-brand link-light d-flex align-items-center gap-2" href="#">
@@ -48,19 +48,92 @@
                         <li class="nav-item">
                             <a class="nav-link link-light" href="#"><span>Senhas</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-light" id="login-button" data-bs-toggle="modal" data-bs-target="#loginmodal" role="button">
-                                <span><i class="bi bi-person"></i> Perfil</span>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle link-light" href="#" id="login-button" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person"></i> Perfil
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-end bg-dark text-light" aria-labelledby="login-button">
+                                <li><a class="dropdown-item text-light" href="#">Configurações</a></li>
+                                <li><hr class="dropdown-divider text-light"></li>
+                                <li>
+                                    <a class="dropdown-item text-light" href="/Github/Arx/php/logout.php">
+                                        <i class="bi bi-box-arrow-left"></i> Sair
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main>
-            <img src="/Github/Arx/image/presentation.png" class="img-fluid" alt="" style="width: 50%; height: auto;">
+        <main class="flex-grow-1">
+
         </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-4">Arx</h5>
+                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Produto</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#favoritos" class="text-light text-decoration-none">Favoritos</a></li>
+                            <li class="mb-2"><a href="#senhas" class="text-light text-decoration-none">Senhas</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Extensões</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Recursos</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Tutoriais</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Suporte</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="mb-4">Assine nossa newsletter</h5>
+                        <p>Receba as últimas novidades sobre segurança digital e atualizações do Arx.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Seu melhor email">
+                            <button class="btn btn-login" type="button">Assinar</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-4" style="border-color: #333;">
+                <div class="d-flex justify-content-center align-items-end">
+                    <div class="text-center text-md-end">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Termos de Uso</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Política de Privacidade</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="w-100 developer-section mb-0 py-3 text-center text-dark">
+                <span class="fw-bold">
+                    &copy; 2025 Luís Lima <a href="https://github.com/LGSLima" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lgslima" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    & 
+                    Lucas Goebel <a href="https://github.com/lgoebel" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lucas-a-goebel" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    <br>
+                    Todos os direitos reservados.</span>
+        </div>
 
         <!-- Decoração SVG -->
         <div class="svg-decor decor-left">
@@ -104,8 +177,6 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
         <!-- JS Personalizado -->
-        <script src="js/script.js">
-            
-        </script>
+        <script src="js/script.js"></script>
     </body>
 </html>

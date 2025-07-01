@@ -1,3 +1,28 @@
+<?php if (isset($_GET['error'])): ?>
+    <div class="alert alert-danger text-center">
+        <?php
+            switch ($_GET['error']) {
+                case 'senha':
+                    echo "As senhas não coincidem.";
+                    break;
+                case 'duplicado':
+                    echo "Usuário, e-mail ou telefone já estão cadastrados.";
+                    break;
+                case 'bd':
+                    echo "Erro ao cadastrar usuário. Tente novamente.";
+                    break;
+                default:
+                    echo "Erro desconhecido.";
+            }
+        ?>
+    </div>
+<?php endif; ?>
+<?php if (isset($_GET['success'])): ?>
+    <div class="alert alert-success text-center">
+        Conta criada com sucesso! Você pode fazer login agora.
+    </div>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -68,26 +93,30 @@
                             <div class="mb-3">
                                 <label for="user_nickname" class="form-label required">Nome de Usuário</label>
                                 <input type="text" class="form-control bg-dark text-light" id="user_nickname" name="user_nickname" required>
-                                <div class="form-note">Este será o seu nome de exibição na plataforma</div>
+                                <div class="form-note">Este será o seu nome de exibição na plataforma, caso não queira inserir seu nome.</div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="user_email" class="form-label required">Email</label>
-                                <input type="email" class="form-control bg-dark text-light" id="user_email" name="user_email" required>
-                                <div class="form-note">Usaremos este email para contato e recuperação de conta</div>
+                                <input type="email" class="form-control bg-dark text-light" id="user_email" name="user_email" oninput="validateEmail()" required>
+                                <div class="form-note">Usaremos este email para contato e recuperação de conta.</div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="user_password" class="form-label required">Senha</label>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control bg-dark text-light" id="user_password" name="user_password" required>
+                                    <input type="password" class="form-control bg-dark text-light" id="user_password" name="user_password" oninput="strengthBar()" required>
                                 </div>
-                                <div class="form-note">Sua senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números</div>
+                                <div id="pass_bar" class="mt-1">
+                                    <div id="pass_strength"></div>
+                                </div>
+                                <span class="form-note" id="feedback-text"></span>
+                                <div class="form-note">Sua senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.</div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="confirm_password" class="form-label required">Confirmar Senha</label>
-                                <input type="password" class="form-control bg-dark text-light" id="confirm_password" name="confirm_password" required>
+                                <input type="password" class="form-control bg-dark text-light" id="confirm_password" name="confirm_password" oninput="passwordConfirmation()" required>
                             </div>
                         </div>
                         
@@ -102,6 +131,7 @@
                             <div class="mb-3">
                                 <label for="birthday_date" class="form-label required">Data de Nascimento</label>
                                 <input type="date" class="form-control bg-dark text-light" id="birthday_date" name="birthday_date" required>
+                                <div class="form-note">Apenas pessoas maiores de 13 anos podem criar conta na plataforma.</div>
                             </div>
                             
                             <div class="mb-3">
@@ -116,18 +146,18 @@
                             <div class="mb-3">
                                 <label for="user_img" class="form-label">Foto de Perfil</label>
                                 <input type="file" class="form-control bg-dark text-light" id="user_img" name="user_img" accept="image/*">
-                                <div class="form-note">Formatos suportados: JPG, PNG, GIF (máx. 2MB)</div>
+                                <div class="form-note">Formatos suportados: JPG, PNG, GIF (máx. 2MB).</div>
                             </div>
                         </div>
                         
                         <div class="form-check mb-4">
                             <input class="form-check-input" type="checkbox" id="terms" required>
                             <label class="form-check-label" for="terms">
-                                Li e concordo com os <a href="#" class="link-cad-reg">Termos de Uso</a> e <a href="#" class="link-cad-reg">Política de Privacidade</a>
+                                Li e concordo com os <a href="#" class="link-cad-reg">Termos de Uso</a> e <a href="#" class="link-cad-reg">Política de Privacidade</a>.
                             </label>
                         </div>
                         
-                        <button type="submit" class="btn btn-register">Criar Conta</button>
+                        <button type="submit" id="button_reg" class="btn btn-register" disabled>Criar Conta</button>
                     </form>
                     
                     <div class="login-link">
@@ -137,42 +167,75 @@
             </div>
         </main>
 
-        <!-- Decoração SVG -->
-        <!-- Decoração SVG -->
-        <div class="svg-decor decor-left">
-            <svg width="500" height="100%" viewBox="0 0 500 1000" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="left-light1" cx="30%" cy="20%" r="80%">
-                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.35"/>
-                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0"/>
-                    </radialGradient>
-                    <radialGradient id="left-light2" cx="40%" cy="70%" r="90%">
-                        <stop offset="0%" stop-color="#4FC3FF" stop-opacity="0.3"/>
-                        <stop offset="100%" stop-color="#4FC3FF" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
+        <!-- Rodapé -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 class="mb-4">
+                            <img src="../image/favicon64.ico" alt="Logo Arx" class="img-fluid" style="max-width: 40px;">
+                            Arx
+                        </h5>
+                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Produto</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#favoritos" class="text-light text-decoration-none">Favoritos</a></li>
+                            <li class="mb-2"><a href="#senhas" class="text-light text-decoration-none">Senhas</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Extensões</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h5 class="mb-4">Recursos</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Tutoriais</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Suporte</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="mb-4">Assine nossa newsletter</h5>
+                        <p>Receba as últimas novidades sobre segurança digital e atualizações do Arx.</p>
+                        <div class="input-group mb-3">
+                            <label for="email-contato" class="input-group-text fw-bold rounded-0">E-mail</label>
+                            <input type="email" id="email-contato" class="form-control text-light">
+                            <button class="btn btn-login" type="button">Assinar</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-5 mb-4" style="border-color: #333;">
+                <div class="d-flex justify-content-center align-items-end">
+                    <div class="text-center text-md-end">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Termos de Uso</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Política de Privacidade</a></li>
+                            <li class="list-inline-item"><a href="#" class="text-light text-decoration-none">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-                <ellipse class="pulse" cx="150" cy="250" rx="320" ry="190" fill="url(#left-light1)" />
-                <ellipse class="pulse" cx="100" cy="750" rx="350" ry="240" fill="url(#left-light2)" />
-            </svg>
-        </div>
-
-        <div class="svg-decor decor-right">
-            <svg width="500" height="100%" viewBox="0 0 500 1000" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="right-light1" cx="70%" cy="30%" r="80%">
-                        <stop offset="0%" stop-color="#4FFFD2" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#4FFFD2" stop-opacity="0"/>
-                    </radialGradient>
-                    <radialGradient id="right-light2" cx="60%" cy="80%" r="90%">
-                        <stop offset="0%" stop-color="#A259FF" stop-opacity="0.35"/>
-                        <stop offset="100%" stop-color="#A259FF" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
-
-                <ellipse class="pulse" cx="350" cy="300" rx="320" ry="190" fill="url(#right-light1)" />
-                <ellipse class="pulse" cx="400" cy="800" rx="350" ry="240" fill="url(#right-light2)" />
-            </svg>
+        <!-- Seção Desenvolvedor -->
+        <div class="w-100 developer-section mb-0 py-3 text-center text-dark">
+                <span class="fw-bold">
+                    &copy; 2025 Luís Lima <a href="https://github.com/LGSLima" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lgslima" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    & 
+                    Lucas Goebel <a href="https://github.com/lgoebel" class="link-dark"><i class="bi bi-github"></a></i> 
+                    | <a href="https://www.linkedin.com/in/lucas-a-goebel" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                    <br>
+                    Todos os direitos reservados.
+                </span>
         </div>
 
         <!-- Modal de Login -->
@@ -222,11 +285,26 @@
             </div>
         </div>
 
+        <!-- Modal de Erro -->
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-danger text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Erro ao cadastrar</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalErrorMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- JS Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
         <!-- JS Personalizado -->
-        <script src="js/script.js"></script>
+        <script src="/Github/Arx/js/script.js"></script>
     </body>
 </html>

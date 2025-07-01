@@ -1,4 +1,4 @@
-/* Reset e base */
+/* Reset e estilos base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,6 +19,7 @@ body {
     color: #ffffff;
 }
 
+/* Rodapé (footer) */
 .footer {
     background-color: #0d0d0d;
     padding: 3rem 0;
@@ -26,6 +27,7 @@ body {
     border-top: 1px solid #333;
 }
 
+/* Seção "Desenvolvedor" */
 .developer-section {
     background: linear-gradient(50deg, #f472b6, #c084fc)
 }
@@ -74,24 +76,29 @@ li span:hover::before, .dropdown:hover::before {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 4px;
+    height: 2px;
     width: 100%;
-    border-radius: 2px;
     background: linear-gradient(135deg, #f472b6, #c084fc);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
-/* Imagens */
-.presentation {
-    filter: 
-        drop-shadow(0 0 1px #fff)
-        drop-shadow(0 0 3px #c084fc)
-        drop-shadow(0 0 6px #f472b6)
-        drop-shadow( 20px 60px 50px rgba(0, 0, 0, 0.5));
+/* Imagens com animação flutuante */
+.float {
+    animation: float-pulse 6s infinite ease-in-out;
     max-width: 600px;
 }
 
-/* Apresentação */
+@keyframes float-pulse {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+
+    0%   { filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #c084fc) drop-shadow(0 0 4px #f472b6); }
+    50%  { filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #c084fc) drop-shadow(0 0 8px #f472b6); }
+    100% { filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #c084fc) drop-shadow(0 0 4px #f472b6); }
+}
+
+/* Apresentação de ícones */
 .icon-presentation {
     padding: 10px;
     width: 60px;
@@ -114,10 +121,16 @@ li span:hover::before, .dropdown:hover::before {
     border-radius: 50%;
     font-size: 1.5rem;
     transition: filter 0.3s ease, transform 0.3s ease;
-    filter:
-        drop-shadow(0 0 1px #fff)
-        drop-shadow(0 0 3px #c084fc)
-        drop-shadow(0 0 6px #f472b6);
+    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px #c084fc) drop-shadow(0 0 6px #f472b6);
+}
+
+.icon-back-color:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 4px #c084fc) drop-shadow(0 0 8px #f472b6);
+}
+
+.icon-presentation i {
+    font-size: 2rem;
 }
 
 .feature-icon {
@@ -126,6 +139,7 @@ li span:hover::before, .dropdown:hover::before {
     margin-bottom: 1rem;
 }
 
+/* Cartões (cards) */
 .card {
     border-radius: 0;
     border: 1px solid #c084fc;
@@ -139,6 +153,7 @@ li span:hover::before, .dropdown:hover::before {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
 }
 
+/* Título de seções */
 .section-title {
     position: relative;
     padding-bottom: 15px;
@@ -155,18 +170,7 @@ li span:hover::before, .dropdown:hover::before {
     background: linear-gradient(135deg, #f472b6, #c084fc);
 }
 
-.icon-back-color:hover {
-    transform: scale(1.05);
-    filter:
-        drop-shadow(0 0 2px #fff)
-        drop-shadow(0 0 4px #c084fc)
-        drop-shadow(0 0 8px #f472b6);
-}
-
-.icon-presentation i {
-    font-size: 2rem;
-}
-
+/* Acordeão (Accordion) */
 .accordion-item {
     border: 1px solid #c084fc;
 }
@@ -187,7 +191,7 @@ li span:hover::before, .dropdown:hover::before {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Dropdown */
+/* Dropdown (menu suspenso) */
 .dropdown-menu a:hover {
     background-color: #555;
 }
@@ -217,7 +221,7 @@ a:focus-visible {
 
 .btn-register,
 .btn-login {
-    background: linear-gradient(50deg, #f472b6, #c084fc); /* Roxo mais escuro */
+    background: linear-gradient(50deg, #f472b6, #c084fc);
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -257,7 +261,23 @@ a:focus-visible {
     font-weight: 500;
 }
 
-/* Links */
+/* Barra de força da senha */
+#pass_bar {
+    width: 50%;
+    background: #1e1e1e;
+    height: 8px;
+    border: 0.5px solid #555;
+    overflow: hidden;
+}
+
+#pass_strength {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #f472b6, #c084fc);
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Links (cadastro, senha) */
 .link-cad-reg {
     color: #d8b4fe;
     text-decoration: underline;
@@ -295,7 +315,7 @@ a:focus-visible {
     color: #f472b6;
 }
 
-/* Formulário */
+/* Formulário de cadastro */
 .signup-container {
     max-width: 800px;
     margin: 3rem auto;
@@ -337,7 +357,7 @@ a:focus-visible {
     border-color: #c084fc !important;
 }
 
-/* Extras */
+/* Extras (modais e notas) */
 .modal-content {
     border-color: #c084fc;
     border-radius: 0;
@@ -349,74 +369,7 @@ a:focus-visible {
     margin-top: 0.25rem;
 }
 
-/* Decoração SVG */
-.svg-decor {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 350px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
-}
-
-.decor-left {
-    left: 0;
-}
-
-.decor-right {
-    right: 0;
-}
-
-.pulse {
-    animation: pulse 6s infinite ease-in-out;
-}
-
-.float {
-    animation: float 10s infinite ease-in-out;
-}
-
-.glow {
-    animation: glow 12s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0%   { opacity: 0.2; transform: scale(1); }
-    50%  { opacity: 0.35; transform: scale(1.02); }
-    100% { opacity: 0.2; transform: scale(1); }
-}
-
-@keyframes float {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes glow {
-    0%   { filter: drop-shadow(0 0 10px rgba(162, 89, 255, 0.1)); }
-    50%  { filter: drop-shadow(0 0 20px rgba(162, 89, 255, 0.3)); }
-    100% { filter: drop-shadow(0 0 10px rgba(162, 89, 255, 0.1)); }
-}
-
-@media (max-width: 1200px) {
-    .svg-decor {
-        opacity: 0.3;
-    }
-
-    .decor-left { left: -200px; }
-    .decor-right { right: -200px; }
-}
-
-@media (max-width: 992px) {
-    .svg-decor { display: none; }
-}
-
-.svg-decor svg {
-    filter: blur(25px);
-    transform: scale(1.1);
-}
-
-/* Inputs de data */
+/* Campo de data */
 input[type="date"] {
     background-color: #121212;
     color: #fff;
@@ -428,21 +381,48 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
 }
 
-/* Scrollbar */
+/* Scrollbar personalizada */
 ::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+    background: #121212;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #FF4FD8, #A259FF);
-  border-radius: 5px;
+    background: linear-gradient(to bottom, #FF4FD8, #A259FF);
+    border-radius: 5px;
 }
 
-/* Ao passar o mouse */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #ff31d2, #892fff);
+    background: linear-gradient(to bottom, #ff31d2, #892fff);
+}
+
+/* Seções de dashboard */
+.quick-actions, .security-status, .activity-section, .stat-card {
+    background-color: #1e1e1e; 
+    border: 1px solid #555;
+}
+
+/*  Barra de progresso */
+.progress {
+    height: 10px; 
+    background-color: #121212;
+}
+
+.progress-bar {
+    width: 78%; 
+    background: linear-gradient(90deg, #f472b6, #c084fc);
+}
+
+/* Ícones e cartões de boas-vindas */
+.icon-size {
+    width: 40px; 
+    height: 40px;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(192, 132, 252, 0.1));
+    border: 1px solid #c084fc;
 }

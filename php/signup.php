@@ -29,7 +29,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Arx</title>
-        <link rel="shortcut icon" href="/github/arx/image/favicon16.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../image/favicon16.ico" type="image/x-icon">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,13 +44,13 @@
         rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
         <!-- CSS Personalizado -->
-        <link rel="stylesheet" href="/github/arx/css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body class="bg-dark text-light">
         <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border py-3">
             <div class="container">
-                <a class="navbar-brand link-light d-flex align-items-center gap-2" href="/github/arx/index.html">
-                    <img src="/github/arx/image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
+                <a class="navbar-brand link-light d-flex align-items-center gap-2" href="../index.html">
+                    <img src="../image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
                     <h1 class="fw-bold">Arx</h1>
                 </a>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll p-lg-0 p-2 d-flex gap-3">
+                        <li class="nav-item">
+							<a class="nav-link link-light px-2 px-lg-0" href="../index.html"><span>Início</span></a>
+						</li>
                         <li class="nav-item">
                             <a class="nav-link link-light px-2 px-lg-0" href="#"><span>Favoritos</span></a>
                         </li>
@@ -176,9 +179,9 @@
                             <img src="../image/favicon64.ico" alt="Logo Arx" class="img-fluid" style="max-width: 40px;">
                             Arx
                         </h5>
-                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2025.</p>
                         <div class="d-flex gap-3 mt-4">
-                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
@@ -227,15 +230,15 @@
 
         <!-- Seção Desenvolvedor -->
         <div class="w-100 developer-section mb-0 py-3 text-center text-dark">
-                <span class="fw-bold">
-                    &copy; 2025 Luís Lima <a href="https://github.com/LGSLima" class="link-dark"><i class="bi bi-github"></a></i> 
-                    | <a href="https://www.linkedin.com/in/lgslima" class="link-dark"><i class="bi bi-linkedin"></i></a>
-                    & 
-                    Lucas Goebel <a href="https://github.com/lgoebel" class="link-dark"><i class="bi bi-github"></a></i> 
-                    | <a href="https://www.linkedin.com/in/lucas-a-goebel" class="link-dark"><i class="bi bi-linkedin"></i></a>
-                    <br>
-                    Todos os direitos reservados.
-                </span>
+            <span class="fw-bold">
+                &copy; 2025 Luís Lima <a href="https://github.com/LGSLima" class="link-dark"><i class="bi bi-github"></a></i> 
+                | <a href="https://www.linkedin.com/in/lgslima" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                & 
+                Lucas Goebel <a href="https://github.com/lgoebel" class="link-dark"><i class="bi bi-github"></a></i> 
+                | <a href="https://www.linkedin.com/in/lucas-a-goebel" class="link-dark"><i class="bi bi-linkedin"></i></a>
+                <br>
+                Todos os direitos reservados.
+            </span>
         </div>
 
         <!-- Modal de Login -->
@@ -243,42 +246,41 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content bg-dark text-light shadow">
                     <div class="modal-body">
-                        <div>
-                            <div class="text-center">
-                                <h3>Entrar</h1>
-                                <span class="text-white">Faça o <span>login</span> para entrar na plataforma</span>                                
-                            </div>                            
-                            <div class="container">
-                                <hr>
-                            </div> 
-                            <div class="container">
-                                <form action="verify.php" method="POST">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="user_nickname" id="login_nickname" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
-                                        <label for="login_nickname" class="text-light">Nome de Usuário</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="password" name="user_password" id="login_password" class="form-control bg-dark text-light" placeholder="Senha" required>
-                                        <label for="login_password" class="text-light">Senha</label>
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-login w-100 mb-2">Entrar</button>
-                                        <button type="button" class="btn btn-secondary w-100 fw-bold" data-bs-dismiss="modal">Cancelar</button>
-                                    </div>
-                                </form>                                
+                        <!-- Título do modal -->
+                        <div class="text-center">
+                            <h3>Entrar</h1>
+                            <span class="text-white">Faça o <span>login</span> para entrar na plataforma</span>                                
+                        </div>                            
+                        <div class="container">
+                            <hr>
+                        </div>
+                        <!-- Formulário de login -->
+                        <form action="verify.php" method="POST" class="container">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="user_nickname" id="login_nickname" class="form-control bg-dark text-light" placeholder="Nome de Usuário" required>
+                                <label for="login_nickname" class="text-light">Nome de Usuário</label>
                             </div>
-                            <div class="container">
-                                <hr class="mb-0">
+                            <div class="form-floating mb-3">
+                                <input type="password" name="user_password" id="login_password" class="form-control bg-dark text-light" placeholder="Senha" required>
+                                <label for="login_password" class="text-light">Senha</label>
                             </div>
-                            <div class="container d-flex justify-content-between small mb-2">
-                                <a href="#" class="link-pass">Esqueci minha senha</a>
-                                <span>
-                                    Não tem conta? 
-                                    <a href="php/signup.php">
-                                        <span class="link-cad-reg">Cadastre-se</span>
-                                    </a>
-                                </span>
+                            <div>
+                                <button type="submit" class="btn btn-login w-100 fw-bold">Entrar</button>
+                                <button type="button" class="btn btn-secondary w-100 fw-bold" data-bs-dismiss="modal">Cancelar</button>
                             </div>
+                        </form>    
+                        <div class="container">
+                            <hr class="mb-0">
+                        </div>
+                        <!-- Links adicionais -->
+                        <div class="container d-flex justify-content-between small mb-2">
+                            <a href="#" class="link-pass">Esqueci minha senha</a>
+                            <span>
+                                Não tem conta? 
+                                <a href="php/signup.php">
+                                    <span class="link-cad-reg">Cadastre-se</span>
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -305,6 +307,6 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
         <!-- JS Personalizado -->
-        <script src="/Github/Arx/js/script.js"></script>
+        <script src="../js/script.js"></script>
     </body>
 </html>

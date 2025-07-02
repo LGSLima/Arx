@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Arx</title>
-        <link rel="shortcut icon" href="/Github/Arx/image/favicon16.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../image/favicon16.ico" type="image/x-icon">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,10 +34,10 @@
         <!-- Navbar -->
         <nav class="navbar bg-dark navbar-expand-lg sticky-top navi-border py-3">
             <div class="container">
-                <a class="navbar-brand link-light d-flex align-items-center gap-2" href="../index.html">
-                    <img src="/Github/Arx/image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
+                <span class="navbar-brand link-light d-flex align-items-center gap-2">
+                    <img src="../image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
                     <h1 class="fw-bold">Arx</h1>
-                </a>
+                </span>
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,7 +57,7 @@
                                 <li><a class="dropdown-item text-light" href="#">Configurações</a></li>
                                 <li><hr class="dropdown-divider text-light"></li>
                                 <li>
-                                    <a class="dropdown-item text-light" href="/Github/Arx/php/logout.php">
+                                    <a class="dropdown-item text-light" href="logout.php">
                                         <i class="bi bi-box-arrow-left"></i> Sair
                                     </a>
                                 </li>
@@ -255,9 +255,9 @@
                             <img src="../image/favicon64.ico" alt="Logo Arx" class="img-fluid" style="max-width: 40px;">
                             Arx
                         </h5>
-                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+                        <p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2025.</p>
                         <div class="d-flex gap-3 mt-4">
-                            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
                             <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>

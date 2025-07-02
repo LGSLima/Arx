@@ -28,7 +28,7 @@
 			<div class="container">
 				<a class="navbar-brand link-light d-flex align-items-center gap-2" href="#">
 					<img src="image/arx_logo.png" alt="Logomarca da Arx" class="img-fluid" style="max-width: 60px;">
-					<h1 class="fw-bold fs-4 m-0">Arx</h1>
+					<h1 class="fw-bold">Arx</h1>
 				</a>
 
 				<!-- Botão do menu hamburguer (mobile) -->
@@ -40,6 +40,9 @@
 				<!-- Itens do menu -->
 				<div class="collapse navbar-collapse" id="navbarScroll">
 					<ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll p-lg-0 p-2 d-flex gap-3">
+						<li class="nav-item">
+							<a class="nav-link link-light px-2 px-lg-0" href="index.html"><span>Início</span></a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link link-light px-2 px-lg-0" href="#"><span>Favoritos</span></a>
 						</li>
@@ -130,7 +133,7 @@
 
 				<!-- Imagem de apresentação -->
 				<section class="col-lg-5 col-12">
-					<img src="/Github/Arx/image/presentation.png" alt="Ilustração de segurança digital" class="img-fluid float">
+					<img src="image/presentation.png" alt="Ilustração de segurança digital" class="img-fluid float">
 				</section>
 			</article>
 
@@ -138,7 +141,7 @@
 			<article>
 				<section class="container py-5">
 					<h2 class="section-title">Recursos Premium</h2>
-					<div class="row">
+					<div class="row text-center">
 						<!-- Card 1 -->
 						<div class="col-md-4 mb-4">
 							<div class="card h-100">
@@ -270,9 +273,9 @@
 							<img src="image/favicon64.ico" alt="Logo Arx" class="img-fluid" style="max-width: 40px;">
 							Arx
 						</h5>
-						<p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2023.</p>
+						<p>Protegendo seus dados e simplificando sua vida digital com soluções de segurança premium desde 2025.</p>
 						<div class="d-flex gap-3 mt-4" aria-label="Redes sociais">
-							<a href="#" class="text-light" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+							<a href="#" class="text-light" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
 							<a href="#" class="text-light" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
 							<a href="#" class="text-light" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
 							<a href="#" class="text-light" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -346,7 +349,7 @@
 
 		<!-- Modal de Login -->
 		<div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content bg-dark text-light shadow">
 					<div class="modal-body">
 						<!-- Título do modal -->
@@ -354,9 +357,9 @@
 							<h3 id="loginmodalLabel">Entrar</h3>
 							<span class="text-white">Faça o <span>login</span> para entrar na plataforma</span>
 						</div>
-
-						<hr class="container">
-
+						<div class="container">
+							<hr>
+						</div> 
 						<!-- Formulário de login -->
 						<form action="php/verify.php" method="POST" class="container">
 							<div class="form-floating mb-3">
@@ -368,19 +371,21 @@
 								<label for="login_password" class="text-light">Senha</label>
 							</div>
 							<div>
-								<button type="submit" class="btn btn-login w-100">Entrar</button>
-								<button type="button" class="btn btn-secondary w-100 fw-bold mt-2" data-bs-dismiss="modal">Cancelar</button>
+								<button type="submit" class="btn btn-login w-100 fw-bold">Entrar</button>
+								<button type="button" class="btn btn-secondary w-100 fw-bold" data-bs-dismiss="modal">Cancelar</button>
 							</div>
 						</form>
-
-						<hr class="container mb-0">
-
+						<div class="container">
+                            <hr class="mb-0">
+                        </div> 
 						<!-- Links adicionais -->
 						<div class="container d-flex justify-content-between small mb-2">
 							<a href="#" class="link-pass">Esqueci minha senha</a>
 							<span>
 								Não tem conta? 
-								<a href="php/signup.php"><span class="link-cad-reg">Cadastre-se</span></a>
+								<a href="php/signup.php">
+									<span class="link-cad-reg">Cadastre-se</span>
+								</a>
 							</span>
 						</div>
 					</div>

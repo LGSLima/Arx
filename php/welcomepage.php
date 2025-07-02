@@ -1,11 +1,19 @@
 <!-- Verificação de Sessão -->
 <?php
     session_start();
+    include('connection_db.php');
+
     if (empty($_SESSION['user'])) {
-    header("Location: ../index.html");
-    exit();
-}
+        header("Location: ../index.html");
+        exit();
+    }
+
+    $user = $_SESSION['user'];
+    $sql = "SELECT * FROM users WHERE User_Name = '$user' OR User_Nickname = '$user'";
+    $result = mysqli_query($connection, $sql);
+    $data = mysqli_fetch_assoc($result);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +97,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="stat-card p-3 h-100">
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-shield-lock fs-1 me-3 text-gradient"></i>
+                                            <i class="bi bi-shield-lock fs-1 me-3"></i>
                                             <div>
                                                 <h5 class="mb-1">Senhas Salvas</h5>
                                                 <p class="mb-0 fs-4">12</p>
@@ -101,10 +109,26 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="stat-card p-3 h-100">
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-star fs-1 me-3 text-gradient"></i>
+                                            <i class="bi bi-star fs-1 me-3"></i>
                                             <div>
                                                 <h5 class="mb-1">Favoritos</h5>
                                                 <p class="mb-0 fs-4">5</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 mb-3">
+                                    <div class="stat-card p-3 h-100">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-journal-text fs-1 me-3"></i>
+                                            <div>
+                                                <h5 class="mb-1">Dados Pessoais</h5>
+                                                <div class="d-flex flex-column gap-2">
+                                                    <span>Nome: <?php echo $data['User_Name']; ?></span>
+                                                    <span>E-mail: <?php echo $data['User_Email']; ?> </span>
+                                                    <span>Tel: <?php echo $data['User_Tel']; ?></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

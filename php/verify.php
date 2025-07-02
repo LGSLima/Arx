@@ -18,7 +18,7 @@
     $user_nickname = mysqli_real_escape_string($connection, $user_nickname);
 
     // Faz a consulta ao banco de dados
-    $sql = "SELECT User_Password AS user_password, User_Nickname AS user_nickname, User_Name As user_name FROM users WHERE User_Nickname = '$user_nickname'";
+    $sql = "SELECT User_Password AS user_password, User_Nickname AS user_nickname, User_Name As user_name, Birthday_Date AS birthday_date, User_Email As user_email, User_Tel As user_tel FROM users WHERE User_Nickname = '$user_nickname'";
     $result = mysqli_query($connection, $sql);
     $user = mysqli_fetch_assoc($result);
 
